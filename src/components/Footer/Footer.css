@@ -1,8 +1,19 @@
 .footer{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-a{
+div a{
+    color: rgb(175, 195, 194);
     text-decoration: none;
+    cursor: pointer;
+}
+
+.footer img{
+    margin-top: 15px;
+    width: 70px;
+}
+.footer-box a{
+    display: block;
 }
