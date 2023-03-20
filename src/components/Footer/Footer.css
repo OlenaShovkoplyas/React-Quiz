@@ -1,19 +1,27 @@
 .footer{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 10px;  
 }
 
 div a{
     color: rgb(175, 195, 194);
     text-decoration: none;
-    cursor: pointer;
+    cursor: pointer;   
+    font-size: 12px; 
 }
 
 .footer img{
-    margin-top: 15px;
+    margin-top: 4px;
     width: 70px;
 }
+
 .footer-box a{
     display: block;
+}
+
+.footer-icons{
+    margin-right: 10px;
 }

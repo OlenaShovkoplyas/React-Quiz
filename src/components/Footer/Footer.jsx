@@ -8,55 +8,50 @@ import Diversity1SharpIcon from '@mui/icons-material/Diversity1Sharp';
 import RoofingSharpIcon from '@mui/icons-material/RoofingSharp';
 import LocalPoliceSharpIcon from '@mui/icons-material/LocalPoliceSharp';
 import ForwardToInboxSharpIcon from '@mui/icons-material/ForwardToInboxSharp';
-import logoman from '../../logoman.png'
-
 
 export default function Footer() {
   return ( 
     <div className="footer"> 
       <div className="footer-box">        
         <a href="" className="about">
-          <RoofingSharpIcon />
+          <RoofingSharpIcon className="footer-icons"/>
           About Us
         </a>
         <a href="" className="privacy">
-          <LocalPoliceSharpIcon />
+          <LocalPoliceSharpIcon className="footer-icons"/>
           Privacy Policy
         </a>          
         <a href="" className="email">
-          <MailOutlineSharpIcon />
+          <MailOutlineSharpIcon className="footer-icons"/>
           quiz-game@gmail.com
         </a>          
       </div>
 
       <div className="footer-box">        
         <a href="" >
-          <TelegramIcon />
+          <TelegramIcon className="footer-icons"/>
           Telegram
         </a>
         <a href="" >
-          <FacebookOutlinedIcon />
+          <FacebookOutlinedIcon className="footer-icons"/>
           Facebook
         </a>
         <a href="" >
-          <ForwardToInboxSharpIcon />
+          <ForwardToInboxSharpIcon className="footer-icons"/>
           Contact Us
         </a>
       </div>
 
       <div className="footer-box">
         <a href="" className="support">              
-          <SupportAgentSharpIcon />
+          <SupportAgentSharpIcon className="footer-icons"/>
           Support
         </a>
         <a href="" className="public">
-          <Diversity1SharpIcon />
+          <Diversity1SharpIcon className="footer-icons"/>
           Public
         </a>          
-      </div>
-
-      <div className="footer-box">
-        <img src={logoman} />
       </div> 
     </div>      
-  )}
+  )
+}

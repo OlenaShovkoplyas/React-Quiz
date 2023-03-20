@@ -6,9 +6,34 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  ;
-}
+ }
 
 .App{
   height: 100vh;
 }
+
+.logoImg{
+  width: 300px;
+  margin-left: 0;
+}
+
+.navListPosition{
+  margin-top: 20px;
+}
+
+.css-julfvu{
+  justify-content: center;
+}
+
+.css-wjdfly{
+  color: #17342af2;
+}
+
+.headLogo{
+  width: 100px;
+}
+
+@media screen and (max-width: 1050px)  {
+  .headLogo{display: none;}   
+}  
+  
