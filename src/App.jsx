@@ -5,14 +5,16 @@ import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import MainPage from './pages/MainPage/MainPage';
 import Footer from './components/Footer/Footer';
-import logo from './mainlogo.png'
-
+import NavList from './components/NavBar/NavList';
+import brainChallenge from './brainChallenge.png'
+import SearchBtn from './components/Buttons/SearchBtn';
 
 const HeaderWrapper = styled(Box)(() => ({
   backgroundColor: 'rgba(17, 94, 84, 0.373)',
   height: '130px',
   display: 'flex',
-  alignItems: 'center',
+  flexWrap: 'wrap',
+  alignItems: 'center',   
 }));
 
 const NavBarWrapper = styled(Box)(() => ({
@@ -29,39 +31,40 @@ const MainWrapper = styled(Box)(() => ({
 }));
 
 const FooterWrapper = styled(Box)(() => ({
-  backgroundColor: 'rgb(9, 33, 33, 0.822)',
-  height: '100px',
+  backgroundColor: 'rgb(9, 33, 33, 0.822)',  
 }));
 
 function App() {
   return (
     <div className="App"> 
       <Grid container>
-        <Grid item lg={3}>
+        <Grid item lg={2} md={2} xs={2}>
         <HeaderWrapper>
-            <img className='logoImg' src={logo} />
-          </HeaderWrapper>
+        <img src={brainChallenge} className='headLogo' /> 
+          <NavBar />  
+        </HeaderWrapper>
         </Grid>
 
-        <Grid item lg={9}>
-          <HeaderWrapper sx={{justifyContent: 'right'}}>
+        <Grid item lg={10} md={10} xs={10}>
+          <HeaderWrapper sx={{justifyContent: 'end'}}>
+            <SearchBtn />                   
             <Header />
           </HeaderWrapper>
         </Grid>
 
-        <Grid item lg={3}>
-          <NavBarWrapper>
-            <NavBar />
+        <Grid item lg={2} md={0} xs={0} display={{xs: "none", md: "none", lg: "block"}}>
+          <NavBarWrapper>                      
+            <NavList className='navListPosition' />
           </NavBarWrapper>
         </Grid>
 
-        <Grid item lg={9}>
+        <Grid item lg={10} md={12} xs={12}>
           <MainWrapper>
             <MainPage />
           </MainWrapper>
         </Grid>
 
-        <Grid item lg={12}>
+        <Grid item lg={12} md={12} xs={12}>
           <FooterWrapper>
             <Footer />
           </FooterWrapper>

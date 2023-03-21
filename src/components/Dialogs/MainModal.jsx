@@ -7,7 +7,7 @@ import {
     CardMedia,
     Button,
     Typography,
- } from '@mui/material';
+} from '@mui/material';
 
 export default function CreateModal({
     open,
