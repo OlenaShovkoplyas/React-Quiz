@@ -1,7 +1,9 @@
 .footer{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 10px;  
 }
 
 div a{
@@ -11,9 +13,14 @@ div a{
 }
 
 .footer img{
-    margin-top: 15px;
+    margin-top: 4px;
     width: 70px;
 }
+
 .footer-box a{
     display: block;
+}
+
+.footer-icons{
+    margin-right: 10px;
 }
