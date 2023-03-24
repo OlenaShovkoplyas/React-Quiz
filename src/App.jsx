@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import './App.css';
 import { Grid, Box, styled } from '@mui/material';
 import Header from './components/Header/Header';
@@ -34,44 +34,46 @@ const FooterWrapper = styled(Box)(() => ({
   backgroundColor: 'rgb(9, 33, 33, 0.822)',  
 }));
 
-function App() {
-  return (
-    <div className="App"> 
-      <Grid container>
-        <Grid item lg={2} md={2} xs={2}>
-        <HeaderWrapper>
-        <img src={brainChallenge} className='headLogo' /> 
-          <NavBar />  
-        </HeaderWrapper>
-        </Grid>
-
-        <Grid item lg={10} md={10} xs={10}>
-          <HeaderWrapper sx={{justifyContent: 'end'}}>
-            <SearchBtn />                   
-            <Header />
+class App extends Component {
+  render() {
+    return (
+      <div className="App"> 
+        <Grid container>
+          <Grid item lg={2} md={2} xs={2}>
+          <HeaderWrapper>
+          <img src={brainChallenge} className='headLogo' /> 
+            <NavBar />  
           </HeaderWrapper>
-        </Grid>
-
-        <Grid item lg={2} md={0} xs={0} display={{xs: "none", md: "none", lg: "block"}}>
-          <NavBarWrapper>                      
-            <NavList className='navListPosition' />
-          </NavBarWrapper>
-        </Grid>
-
-        <Grid item lg={10} md={12} xs={12}>
-          <MainWrapper>
-            <MainPage />
-          </MainWrapper>
-        </Grid>
-
-        <Grid item lg={12} md={12} xs={12}>
-          <FooterWrapper>
-            <Footer />
-          </FooterWrapper>
-        </Grid>
-  </Grid>   
-  </div>
-  );
+          </Grid>
+  
+          <Grid item lg={10} md={10} xs={10}>
+            <HeaderWrapper sx={{justifyContent: 'end'}}>
+              <SearchBtn />                   
+              <Header />
+            </HeaderWrapper>
+          </Grid>
+  
+          <Grid item lg={2} md={0} xs={0} display={{xs: "none", md: "none", lg: "block"}}>
+            <NavBarWrapper>                      
+              <NavList className='navListPosition' />
+            </NavBarWrapper>
+          </Grid>
+  
+          <Grid item lg={10} md={12} xs={12}>
+            <MainWrapper>
+              <MainPage />
+            </MainWrapper>
+          </Grid>
+  
+          <Grid item lg={12} md={12} xs={12}>
+            <FooterWrapper>
+              <Footer />
+            </FooterWrapper>
+          </Grid>
+        </Grid>   
+      </div>
+    );
+  } 
 }
 
 export default App;

@@ -1,4 +1,4 @@
-import React from "react";
+import { Component } from "react";
 import './Footer.css';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
@@ -9,49 +9,55 @@ import RoofingSharpIcon from '@mui/icons-material/RoofingSharp';
 import LocalPoliceSharpIcon from '@mui/icons-material/LocalPoliceSharp';
 import ForwardToInboxSharpIcon from '@mui/icons-material/ForwardToInboxSharp';
 
-export default function Footer() {
-  return ( 
-    <div className="footer"> 
-      <div className="footer-box">        
-        <a href="" className="about">
-          <RoofingSharpIcon className="footer-icons"/>
-          About Us
-        </a>
-        <a href="" className="privacy">
-          <LocalPoliceSharpIcon className="footer-icons"/>
-          Privacy Policy
-        </a>          
-        <a href="" className="email">
-          <MailOutlineSharpIcon className="footer-icons"/>
-          quiz-game@gmail.com
-        </a>          
-      </div>
-
-      <div className="footer-box">        
-        <a href="" >
-          <TelegramIcon className="footer-icons"/>
-          Telegram
-        </a>
-        <a href="" >
-          <FacebookOutlinedIcon className="footer-icons"/>
-          Facebook
-        </a>
-        <a href="" >
-          <ForwardToInboxSharpIcon className="footer-icons"/>
-          Contact Us
-        </a>
-      </div>
-
-      <div className="footer-box">
-        <a href="" className="support">              
-          <SupportAgentSharpIcon className="footer-icons"/>
-          Support
-        </a>
-        <a href="" className="public">
-          <Diversity1SharpIcon className="footer-icons"/>
-          Public
-        </a>          
-      </div> 
-    </div>      
-  )
+export default class Footer extends Component {
+  constructor() {
+    super();
+  }
+  
+  render() {
+    return ( 
+      <div className="footer"> 
+        <div className="footer-box">        
+          <a href="" className="about">
+            <RoofingSharpIcon className="footer-icons"/>
+            About Us
+          </a>
+          <a href="" className="privacy">
+            <LocalPoliceSharpIcon className="footer-icons"/>
+            Privacy Policy
+          </a>          
+          <a href="" className="email">
+            <MailOutlineSharpIcon className="footer-icons"/>
+            quiz-game@gmail.com
+          </a>          
+        </div>
+  
+        <div className="footer-box">        
+          <a href="" >
+            <TelegramIcon className="footer-icons"/>
+            Telegram
+          </a>
+          <a href="" >
+            <FacebookOutlinedIcon className="footer-icons"/>
+            Facebook
+          </a>
+          <a href="" >
+            <ForwardToInboxSharpIcon className="footer-icons"/>
+            Contact Us
+          </a>
+        </div>
+  
+        <div className="footer-box">
+          <a href="" className="support">              
+            <SupportAgentSharpIcon className="footer-icons"/>
+            Support
+          </a>
+          <a href="" className="public">
+            <Diversity1SharpIcon className="footer-icons"/>
+            Public
+          </a>          
+        </div> 
+      </div>      
+    )
+  }
 }
