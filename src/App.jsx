@@ -6,7 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import MainPage from './pages/MainPage/MainPage';
 import Footer from './components/Footer/Footer';
 import NavList from './components/NavBar/NavList';
-import brainChallenge from './brainChallenge.png'
+import brainChallenge from './brainChallenge.png';
 import SearchBtn from './components/Buttons/SearchBtn';
 
 const HeaderWrapper = styled(Box)(() => ({
@@ -14,7 +14,7 @@ const HeaderWrapper = styled(Box)(() => ({
   height: '130px',
   display: 'flex',
   flexWrap: 'wrap',
-  alignItems: 'center',   
+  alignItems: 'center',
 }));
 
 const NavBarWrapper = styled(Box)(() => ({
@@ -25,35 +25,35 @@ const NavBarWrapper = styled(Box)(() => ({
 }));
 
 const MainWrapper = styled(Box)(() => ({
-  backgroundColor: 'white',  
-  padding: '20px',  
+  backgroundColor: 'white',
+  padding: '20px',
   overflow: 'auto',
 }));
 
 const FooterWrapper = styled(Box)(() => ({
-  backgroundColor: 'rgb(9, 33, 33, 0.822)',  
+  backgroundColor: 'rgb(9, 33, 33, 0.822)',
 }));
 
 function App() {
   return (
-    <div className="App"> 
+    <div className="App">
       <Grid container>
         <Grid item lg={2} md={2} xs={2}>
         <HeaderWrapper>
-        <img src={brainChallenge} className='headLogo' /> 
-          <NavBar />  
+        <img src={brainChallenge} className='headLogo' />
+          <NavBar />
         </HeaderWrapper>
         </Grid>
 
         <Grid item lg={10} md={10} xs={10}>
-          <HeaderWrapper sx={{justifyContent: 'end'}}>
-            <SearchBtn />                   
+          <HeaderWrapper sx={{ justifyContent: 'end' }}>
+            <SearchBtn />
             <Header />
           </HeaderWrapper>
         </Grid>
 
-        <Grid item lg={2} md={0} xs={0} display={{xs: "none", md: "none", lg: "block"}}>
-          <NavBarWrapper>                      
+        <Grid item lg={2} md={0} xs={0} display={{ xs: 'none', md: 'none', lg: 'block' }}>
+          <NavBarWrapper>
             <NavList className='navListPosition' />
           </NavBarWrapper>
         </Grid>
@@ -69,7 +69,7 @@ function App() {
             <Footer />
           </FooterWrapper>
         </Grid>
-  </Grid>   
+  </Grid>
   </div>
   );
 }

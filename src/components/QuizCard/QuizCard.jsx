@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import './QuizCard.css';
-import { 
-    Card,
-    CardActions,
-    CardContent,
-    CardMedia,
-    Button,
-    Typography
-}  from '@mui/material';
-import CreateModal from "../Dialogs/MainModal";
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Button,
+  Typography,
+} from '@mui/material';
+import CreateModal from '../Dialogs/MainModal';
 
 export default function QuizCard({
   imageSrc,
   quizName,
   description,
   quizTime,
-  questionAmount 
+  questionAmount,
 }) {
   const [open, setOpenModal] = useState(false);
-  
+
   return (
     <>
     <Card className="card" sx={{ maxWidth: 345 }}>
@@ -40,7 +40,7 @@ export default function QuizCard({
         <Button size='small'>Start Quiz</Button>
       </CardActions>
     </Card>
-    <CreateModal    
+    <CreateModal
       open={open}
       handleOnClose={() => setOpenModal(false)}
       imageSrc={imageSrc}

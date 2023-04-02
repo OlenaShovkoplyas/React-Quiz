@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Box, styled } from "@mui/system";
-import { quizes } from "../../api";
-import QuizCard from "../../components/QuizCard/QuizCard";
+import React, { useEffect, useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Box, styled } from '@mui/system';
+import { quizes } from '../../api';
+import QuizCard from '../../components/QuizCard/QuizCard';
 
-const CardWrapper = styled(Box)(() => ({      
-    display: 'flex',
-    flexWrap: 'wrap', 
-    justifyContent: 'center',       
+const CardWrapper = styled(Box)(() => ({
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
 }));
 
 export default function MainPage() {
@@ -16,16 +17,16 @@ export default function MainPage() {
     (async () => {
       try {
         const { data } = await quizes.fetch();
-        setQuizes(data);        
+        setQuizes(data);
       } catch (error) {
         console.log(error);
-    }
+      }
     })();
-  }, [])
+  }, []);
 
-  return (  
+  return (
     <CardWrapper>
-      {quizesData.map(quiz => (
+      {quizesData.map((quiz) => (
         <QuizCard
           key={quiz.key}
           quizName={quiz.quizName}
@@ -35,6 +36,6 @@ export default function MainPage() {
           questionAmount={quiz.questionAmount}
         />
       ))}
-    </CardWrapper> 
+    </CardWrapper>
   );
 }

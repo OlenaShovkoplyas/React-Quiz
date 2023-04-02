@@ -1,22 +1,22 @@
 import * as React from 'react';
 import {
-    Dialog,
-    DialogActions,
-    Card,
-    CardContent,
-    CardMedia,
-    Button,
-    Typography,
+  Dialog,
+  DialogActions,
+  Card,
+  CardContent,
+  CardMedia,
+  Button,
+  Typography,
 } from '@mui/material';
 
 export default function CreateModal({
-    open,
-    handleOnClose,
-    imageSrc,
-    quizName,
-    description,
-    quizTime,
-    questionAmount
+  open,
+  handleOnClose,
+  imageSrc,
+  quizName,
+  description,
+  quizTime,
+  questionAmount,
 }) {
   return (
     <div>
@@ -45,11 +45,11 @@ export default function CreateModal({
             <Typography variant='body2' color='text.main'>
               Amount of questions: {questionAmount}
             </Typography>
-          </CardContent>          
+          </CardContent>
         </Card>
 
         <DialogActions>
-          <Button onClick={handleOnClose}>Close</Button>          
+          <Button onClick={handleOnClose}>Close</Button>
         </DialogActions>
       </Dialog>
     </div>
