@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { styled, alpha, InputBase } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -45,21 +45,26 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function SearchBtn () {
-  return (
-    <Search>
-        <SearchIconWrapper >
-            <SearchIcon />
-        </SearchIconWrapper>
-        <StyledInputBase
-            sx={{
-                width: '200px',
-                color: 'white',                               
-            }}
-            width="100px"
-            placeholder="Search…"
-            inputProps={{ 'aria-label': 'search' }}
-        />
-    </Search>
-  );
+export default class SearchBtn extends Component {
+    constructor() {
+        super();
+    }
+    render() {
+        return (
+            <Search>
+                <SearchIconWrapper >
+                    <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                    sx={{
+                        width: '200px',
+                        color: 'white',                               
+                    }}
+                    width="100px"
+                    placeholder="Search…"
+                    inputProps={{ 'aria-label': 'search' }}
+                />
+            </Search>
+          );
+    }  
 }
