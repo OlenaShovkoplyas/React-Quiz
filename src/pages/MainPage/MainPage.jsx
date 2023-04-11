@@ -36,6 +36,6 @@ export default function MainPage() {
           questionAmount={quiz.questionAmount}
         />
       ))}
-    </CardWrapper>
+      </CardWrapper>
   );
 }
