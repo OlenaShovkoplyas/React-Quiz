@@ -1,46 +1,54 @@
-// Временно рандомный таймер
-import React, { useState, useEffect } from 'react';
+// // Временный таймер
 
-const Timer = () => {
-  const [seconds, setSeconds] = useState(0);
-  const [isActive, setIsActive] = useState(false);
+import React, { useEffect, useState } from 'react';
+import { getPadTime } from '../../constants/getPadTime';
 
-  function toggle() {
-    setIsActive(!isActive);
-  }
+export default function Timer() {
+  const [timeLeft, setTimeLeft] = useState(10 * 60);
+  const [isCounting, setIsCounting] = useState(false);
 
-  function reset() {
-    setSeconds(0);
-    setIsActive(false);
-  }
+  const minutes = getPadTime(Math.floor(timeLeft / 60));
+  const seconds = getPadTime(timeLeft - minutes * 60);
 
   useEffect(() => {
-    let interval = null;
-    if (isActive) {
-      interval = setInterval(() => {
-        setSeconds((seconds) => seconds + 1);
-      }, 1000);
-    } else if (!isActive && seconds !== 0) {
+    const interval = setInterval(() => {
+      if (isCounting) setTimeLeft((timeLeft) => (timeLeft >= 1 ? timeLeft - 1 : 0));
+    }, 1000);
+
+    if (timeLeft === 0) setIsCounting(false);
+
+    return () => {
       clearInterval(interval);
-    }
-    return () => clearInterval(interval);
-  }, [isActive, seconds]);
+    };
+  }, [timeLeft, isCounting]);
+
+  const handleStart = () => {
+    if (timeLeft === 0) setTimeLeft(10 * 60);
+    setIsCounting(true);
+  };
+
+  const handleStop = () => {
+    setIsCounting(false);
+  };
 
   return (
-    <div className="app">
-      <div className="time">
-        {seconds}s
+    <>
+      <div>
+        <span>{minutes}</span>
+        <span>:</span>
+        <span>{seconds}</span>
       </div>
-      <div className="row">
-        <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
-          {isActive ? 'Pause' : 'Start'}
-        </button>
-        <button className="button" onClick={reset}>
-          Reset
-        </button>
+      <div>
+        {isCounting ? (
+          <button
+          onClick={handleStop}
+          >Stop</button>
+        ) : (
+          <button
+          onClick={handleStart}
+          >Start</button>
+        )}
       </div>
-    </div>
+    </>
   );
-};
-
-export default Timer;
+}

@@ -33,8 +33,6 @@ export default function QuizList() {
           id={index}
           quizImage={quiz.imageSrc}
           quizDescription={quiz.description}
-          quizTime={quiz.time}
-          quizQuestions={quiz.questions}
         />
       ))}
     </QuizListWrapper>
