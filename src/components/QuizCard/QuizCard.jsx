@@ -1,30 +1,32 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import './QuizCard.css';
-import { 
-    Card,
-    CardActions,
-    CardContent,
-    CardMedia,
-    Button,
-    Typography
-}  from '@mui/material';
-import CreateModal from "../Dialogs/MainModal";
+import { Link } from 'react-router-dom';
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Button,
+  Typography,
+} from '@mui/material';
+import CreateModal from '../Dialogs/MainModal';
 
 export default function QuizCard({
-  imageSrc,
+  image,
   quizName,
   description,
   quizTime,
-  questionAmount 
+  questionAmount,
 }) {
   const [open, setOpenModal] = useState(false);
-  
+  const pathToQuiz = quizName.split(' ').join('_').toLowerCase();
+
   return (
     <>
     <Card className="card" sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
-        image={imageSrc}
+        image={image}
         title={quizName}
       />
       <CardContent>
@@ -37,13 +39,20 @@ export default function QuizCard({
       </CardContent>
       <CardActions className="position">
         <Button size='small' onClick={() => setOpenModal(true)}>Learn More</Button>
-        <Button size='small'>Start Quiz</Button>
+        <Button size='small'>
+          <Link
+            style={{ textDecoration: 'none', color: 'inherit' }}
+            to={`/quiz/${pathToQuiz}`}
+          >
+            Open Quiz
+          </Link>
+        </Button>
       </CardActions>
     </Card>
-    <CreateModal    
+    <CreateModal
       open={open}
       handleOnClose={() => setOpenModal(false)}
-      imageSrc={imageSrc}
+      image={image}
       quizName={quizName}
       description={description}
       quizTime={quizTime}
